@@ -109,4 +109,24 @@ describe("Calculator", () => {
     fireEvent.click(equalButton);
     expect(runningTotal.textContent).toEqual("21");
   });
+  it("should be able to clear running total without affecting the calculator", () => {
+    const button4 = container.getByTestId("number4");
+    const divideButton = container.getByTestId("operator-divide");
+    const button2 = container.getByTestId("number2");
+    const equalButton = container.getByTestId("operator-equals");
+    const buttonC = container.getByTestId("clear");
+    const button5 = container.getByTestId("number5");
+    const multipleButton = container.getByTestId("operator-multiply");
+    const runningTotal = container.getByTestId("running-total");
+    fireEvent.click(button4);
+    fireEvent.click(divideButton);
+    fireEvent.click(button2);
+    fireEvent.click(equalButton);
+    fireEvent.click(buttonC);
+    fireEvent.click(button5);
+    fireEvent.click(multipleButton);
+    fireEvent.click(button2);
+    fireEvent.click(equalButton);
+    expect(runningTotal.textContent).toEqual("4");
+  });
 });

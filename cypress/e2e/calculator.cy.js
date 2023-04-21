@@ -76,11 +76,11 @@ describe("Calculator", () => {
     cy.get("#number0").click();
     cy.get(".display").should("contain", "1e+21");
   });
-  it("should get infinity if divide by 0", () => {
+  it("should show not possible if divide by 0", () => {
     cy.get("#number6").click();
     cy.get("#operator-divide").click();
     cy.get("#number0").click();
     cy.get("#operator-equals").click();
-    cy.get(".display").should("contain", "Infinity");
+    cy.get(".display").should("contain", "not possible");
   });
 });
