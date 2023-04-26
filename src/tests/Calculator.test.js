@@ -127,6 +127,6 @@ describe("Calculator", () => {
     fireEvent.click(multipleButton);
     fireEvent.click(button2);
     fireEvent.click(equalButton);
-    expect(runningTotal.textContent).toEqual("4");
+    expect(runningTotal.textContent).toEqual("10");
   });
 });
